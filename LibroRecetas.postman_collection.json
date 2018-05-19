@@ -1,0 +1,84 @@
+{
+	"variables": [],
+	"info": {
+		"name": "LibroRecetas",
+		"_postman_id": "a753522a-9c11-cba8-b579-4dee3b059c8d",
+		"description": "test de Libro de Recetas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RecipeAll",
+			"request": {
+				"url": "http://localhost:8080/api/recipe/all",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "RecipeAll"
+			},
+			"response": []
+		},
+		{
+			"name": "RecipeByID",
+			"request": {
+				"url": "http://localhost:8080/api/recipe/1/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "RecipeByID"
+			},
+			"response": []
+		},
+		{
+			"name": "RecipeUpdate",
+			"request": {
+				"url": "http://localhost:8080/api/recipe/1/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"name\": \"Macarrones con queso\",\n    \"description\": \"Lo mejor que te pasó en la vida.\",\n    \"imagePath\": \"http://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/11/14/0/WU-0103_mac-and-cheese_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382541000580.jpeg\",\n    \"ingredients\": [\n        {\n            \"name\": \"Macarrones\",\n            \"amount\": 50\n        },\n        {\n            \"name\": \"Queso cheddar\",\n            \"amount\": 4\n        },\n        {\n            \"name\": \"Queso mozzarella\",\n            \"amount\": 4\n        }\n    ]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "SaveRecipe",
+			"request": {
+				"url": "http://localhost:8080/api/recipe/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"name\": \"Una Pizza 100% hecha a la parrilla\",\n    \"description\": \"Una Pizza 100% hecha a la parrilla!!! Desde 0. No saben lo deliciosa de esta receta por dios!! Haganla!!\",\n    \"imagePath\": \"http://locosxelasado.com/wp-content/uploads/2016/01/locosxelasado-20150715005247-xnyppcgimmxwtjmcj.jpg\",\n    \"ingredients\": [\n        {\n            \"name\": \"harina\",\n            \"amount\": 1\n        },\n        {\n            \"name\": \"Orégano\",\n            \"amount\": 2\n        },\n        {\n            \"name\": \"Salsa de tomate\",\n            \"amount\": 2\n        },\n        {\n            \"name\": \"Queso mozzarella\",\n            \"amount\": 4\n        }\n    ]\n}"
+				},
+				"description": "SaveRecipe"
+			},
+			"response": []
+		},
+		{
+			"name": "listIngredientByRecipe",
+			"request": {
+				"url": "http://localhost:8080/api/ingredient/1/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "listIngredientByRecipe"
+			},
+			"response": []
+		}
+	]
+}
