@@ -40,11 +40,11 @@ class AbstractDAOImpl implements AbstractDAO {
         return sessionFactory.getCurrentSession().get(entityClass, id);
     }
 
-    <T> List<T> findListNamedQuery( String namedQuery, Map<String,Object> params) {
+    List findListNamedQuery(String namedQuery, Map<String,Object> params) {
          Query query = sessionFactory.getCurrentSession().getNamedQuery(namedQuery);
         for (Map.Entry<String, Object> entry : params.entrySet()) {
             query.setParameter(entry.getKey(), entry.getValue());
         }
-        return (List<T>) query.list();
+        return query.list();
     }
 }

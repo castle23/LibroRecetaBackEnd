@@ -33,7 +33,7 @@ public class IngredientDatasourceImpl extends AbstractDAOImpl implements Ingredi
     public List<Ingredient> findByIdRecipe(long id) {
         Map<String,Object> params = new HashMap<>();
         params.put("recipeId",id);
-        return findListNamedQuery("Ingredient.SumByIdRecipe",params);
+        return (List<Ingredient>)findListNamedQuery("Ingredient.SumByIdRecipe",params);
     }
 
 }

@@ -1,12 +1,16 @@
 package app.recipe;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
+import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 
 @Entity
-@NamedQueries({
-		@NamedQuery(name = "Ingredient.SumByIdRecipe",query = "select sum(amount) as amount, name from Ingredient where recipe.id = :recipeId group by name")
+@NamedNativeQueries({
+		@NamedNativeQuery(name = "Ingredient.SumByIdRecipe",query = "select id, name, sum(amount) as amount, recipe_id from ingredient where recipe_id = :recipeId group by name", resultClass = Ingredient.class)
 })
 public class Ingredient {
 

@@ -28,7 +28,7 @@ public class IngredientServiceImpl implements IngredientService {
         try{
             List<Ingredient> ingredientList = datasource.findByIdRecipe(id);
             if(ingredientList != null && !ingredientList.isEmpty()){
-                response.setData(datasource.findByIdRecipe(id));
+                response.setData(ingredientList);
             }else{
                 response.setDescription("No se encontraron ingredientes para la receta");
             }
